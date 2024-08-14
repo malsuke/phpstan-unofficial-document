@@ -1,27 +1,16 @@
 import { defineConfig } from 'vitepress'
-import { jaSearch } from './ja'
+import { en } from './en'
 
-export const shared = defineConfig({
+export default defineConfig({
   title: 'VitePress',
 
   rewrites: {
-    'en/:rest*': ':rest*'
+    'ja/:rest*': ':rest*'
   },
 
   lastUpdated: true,
   cleanUrls: true,
   metaChunk: true,
-
-  markdown: {
-    math: true,
-    codeTransformers: [
-      {
-        postprocess(code) {
-          return code.replace(/\[\!\!code/g, '[!code')
-        }
-      }
-    ]
-  },
 
   sitemap: {
     hostname: 'https://vitepress.dev',
@@ -46,24 +35,11 @@ export const shared = defineConfig({
 
   themeConfig: {
     logo: { src: '/vitepress-logo-mini.svg', width: 24, height: 24 },
+  },
 
-    // socialLinks: [
-    //   { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    // ],
-
-    search: {
-      provider: 'algolia',
-      options: {
-        appId: '8J64VVRP8K',
-        apiKey: 'a18e2f4cc5665f6602c5631fd868adfd',
-        indexName: 'vitepress',
-        locales: {
-          ...jaSearch,
-        }
-      }
-    },
-
-    carbonAds: { code: 'CEBDT27Y', placement: 'vuejsorg' }
+  locales: {
+    root: { label: '日本語', ...en },
+    en: { label: 'English', ...en },
   },
 
   /** ビルド時にmonaco-editorでエラーが発生するため */

@@ -9,8 +9,8 @@ export const ja = defineConfig({
     nav: nav(),
 
     sidebar: {
-      '/es/guide/': { base: '/es/guide/', items: sidebarGuide() },
-      '/es/reference/': { base: '/es/reference/', items: sidebarReference() }
+      '/ja/guide/': { base: '/ja/guide/', items: sidebarGuide() },
+      '/ja/reference/': { base: '/ja/reference/', items: sidebarReference() }
     },
 
     editLink: {
@@ -53,13 +53,13 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     {
       text: 'Guia',
-      link: '/es/guide/what-is-vitepress',
-      activeMatch: '/es/guide/'
+      link: '/ja/guide/what-is-vitepress',
+      activeMatch: '/ja/guide/'
     },
     {
       text: 'Referencia',
-      link: '/es/reference/site-config',
-      activeMatch: '/es/reference/'
+      link: '/ja/reference/site-config',
+      activeMatch: '/ja/reference/'
     },
     {
       text: "testtest",
@@ -127,7 +127,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
     },
     {
       text: 'Configuración y Referencia del API',
-      base: '/es/reference/',
+      base: '/ja/reference/',
       link: 'site-config'
     }
   ]
@@ -144,7 +144,7 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
         { text: 'CLI', link: 'cli' },
         {
           text: 'Tema por defecto',
-          base: '/es/reference/default-theme-',
+          base: '/ja/reference/default-theme-',
           items: [
             { text: 'Visión general', link: 'config' },
             { text: 'Navegación', link: 'nav' },
